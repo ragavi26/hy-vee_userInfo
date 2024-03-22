@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { apiConstants, paramConstants, viewConstants } from "./constants";
 import "./globals.css";
 
@@ -10,6 +10,7 @@ export default function UserDetail() {
   const [userAge, setUserAge] = useState({});
   const [userGender, setUserGender] = useState({});
   const [userCountry, setUserCountry] = useState([]);
+  const [userCountryCode, setUserCountryCode] = useState("");
 
   // setting input values
   const handleInput = (e) => {
@@ -58,7 +59,7 @@ export default function UserDetail() {
     userCountry?.country?.sort(function (a, b) {
       return b.probability - a.probability;
     });
-    return userCountry?.country?.[0]?.country_id;
+    setUserCountryCode(userCountry?.country?.[0]?.country_id);
   };
 
   // Reset the form details
@@ -67,6 +68,9 @@ export default function UserDetail() {
     setUserName("");
   };
 
+  useEffect(() => {
+    getUserCountry();
+  }, [userCountry]);
   // Left & Right View section of User Details
   const renderDetailSection = (data) => (
     <div className="detailSection">
@@ -93,7 +97,7 @@ export default function UserDetail() {
         {renderUserDetail(viewConstants.userName, userName)}
         {renderUserDetail(viewConstants.userAge, userAge.age)}
         {renderUserDetail(viewConstants.userGender, userGender.gender)}
-        {renderUserDetail(viewConstants.userCountry, getUserCountry)}
+        {renderUserDetail(viewConstants.userCountry, userCountryCode)}
         <button className="resetButton" onClick={resetDetails} type="submit">
           {viewConstants.labelGetAnotherDetail}
         </button>
