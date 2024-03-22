@@ -24,7 +24,7 @@ export default function UserDetail() {
       method: "GET",
       redirect: "follow",
     };
-    const serverUrl = `${apiUrl}?${paramConstants.name}=${formData?.name}`;
+    const serverUrl = `${apiUrl}?${paramConstants.name}=${userName}`;
     fetch(serverUrl, requestOptions)
       .then((response) => response.json())
       .then((result) => {
