@@ -34,12 +34,6 @@ body {
   width: 45%;
   display: inline-flex;
 }
-@media (max-width: 700px) {
-  .detailSection {
-    width: 100%;
-    display: inline-flex;
-  }
-}
 .mainHeading {
   font-size: 60px;
   color: white;
@@ -109,7 +103,7 @@ body {
   color: #d3d3d3;
 }
 .colonSeparator {
-  width: 5%;
+  width: 10%;
   display: inline-flex;
 }
 .colonText {
@@ -118,4 +112,18 @@ body {
 }
 .textColor {
   color: white;
+}
+@media (max-width: 700px) {
+  .userDetailsView {
+    width: 80%;
+  }
+  .mainHeading {
+    font-size: 25px;
+  }
+  .userDetailsText {
+    font-size: 20px;
+  }
+  .userFormText {
+    font-size: 20px;
+  }
 }
