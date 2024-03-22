@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-image: url("https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.detailSection {
+  width: 45%;
+  display: inline-flex;
+}
+.mainHeading {
+  font-size: 60px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+.userDetailsView {
+  margin: auto;
+  width: 50%;
+}
+.userDetailsText {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  margin: 5%;
+  text-align: center;
+}
+.resetButton {
+  width: 100%;
+  border-width: 0.5px;
+  border-color: black;
+  background-color: #87ceeb;
+  text-align: center;
+  color: black;
+  margin-top: 30px;
+}
+.userFormText {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-block: 30px;
+}
+.inputParamView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputParamText {
+  margin-right: 10px;
+  font-size: 18px;
+  color: white;
+}
+.inputContainer {
+  border-width: 0.5px;
+  border-color: white;
+  padding-left: 5px;
+  margin-block: 30px;
+}
+.submitButtonView {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+.submitButton {
+  padding-inline: 20px;
+  border-width: 0.5px;
+  border-color: black;
+  background-color: #87ceeb;
+  color: black;
+}
+.disabledSubmitButton {
+  padding-inline: 20px;
+  border-width: 0.5px;
+  border-color: black;
+  background-color: gray;
+  color: #d3d3d3;
+}
+.colonSeparator {
+  width: 5%;
+  display: inline-flex;
+}
+.colonText {
+  color: white;
+  text-align: center;
+}
+.textColor {
+  color: white;
+}
